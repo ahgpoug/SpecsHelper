@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/i"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:text="Intel Core i7 Skylake"
+                        android:textSize="25dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/socket"
+                        android:paddingTop="4dp"
+                        android:text="Socket: LGA1151"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/coresCount"
+                        android:text="Ядер: 4"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/clock"
+                        android:text="Частота: 4000 МГц"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/gpuType"
+                        android:text="GPU: Intel HD Graphics 4000"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/process"
+                        android:text="Техпроцесс: 14 нм"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tdp"
+                        android:text="Тепловыделение: 91"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/release"
+                        android:text="Дата выхода: 2015"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/price"
+                android:paddingTop="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Цена: 24990 руб."
+                android:textSize="26dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

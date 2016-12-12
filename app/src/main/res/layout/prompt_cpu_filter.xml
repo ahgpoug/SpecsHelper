@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/manufacturer_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <EditText
+            android:id="@+id/manufacturerET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:width="350dp"
+            android:hint="Производитель"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/codename_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <EditText
+            android:id="@+id/codenameET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:width="350dp"
+            android:hint="Название"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/socket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/coresSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/coresCount_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/coresCountET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Количество ядер (шт.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/clockSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/clock_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/clockET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Частота ядра (МГц)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/gpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="350dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/processSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/process_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/processET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Техпроцесс (нм)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/tdpSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tdp_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/tdpET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Тепловыделение (Вт)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/releaseSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/release_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/releaseET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Год выхода"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/priceSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/price_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/priceET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Цена (руб.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+</LinearLayout>
