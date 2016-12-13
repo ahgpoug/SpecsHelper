@@ -2,6 +2,7 @@ package ahgpoug.com.specshelper.adapters;
 
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,10 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.DataBaseHelper;
+import ahgpoug.com.specshelper.Globals;
 import ahgpoug.com.specshelper.Objects.CPU;
 import ahgpoug.com.specshelper.R;
 
@@ -32,6 +36,7 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
         private TextView tdp;
         private TextView release;
         private TextView price;
+        private ImageView cart;
 
         private ViewHolder(View view) {
             super(view);
@@ -45,6 +50,7 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
             tdp = (TextView) view.findViewById(R.id.tdp);
             release = (TextView) view.findViewById(R.id.release);
             price = (TextView) view.findViewById(R.id.price);
+            cart = (ImageView) view.findViewById(R.id.cartImage);
         }
     }
 
@@ -62,6 +68,11 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+        if (!(Globals.cart.getCpuID() == values.get(position).getId()))
+            holder.cart.setVisibility(View.GONE);
+        else
+            holder.cart.setVisibility(View.VISIBLE);
+
         holder.name.setText(values.get(position).getManufacturer() + " " + values.get(position).getCodename());
         holder.socket.setText("Socket: " + values.get(position).getSocket());
         holder.coresCount.setText("Ядер: " + values.get(position).getCoresCount());
@@ -103,6 +114,27 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
                 }
             }
         });
+
+        if (!Globals.isAdmin){
+            holder.name.getRootView().setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if (!(Globals.cart.getCpuID() == values.get(position).getId())) {
+                        Globals.cart.setCpuID(values.get(position).getId());
+
+                        Toast.makeText(context, "Добавлено в корзину", Toast.LENGTH_LONG).show();
+                        notifyDataSetChanged();
+                    } else {
+                        Globals.cart.setCpuID(-1);
+
+                        Toast.makeText(context, "Удалено из корзины", Toast.LENGTH_LONG).show();
+                        notifyDataSetChanged();
+                    }
+                    return false;
+                }
+            });
+        }
+
     }
 
     @Override

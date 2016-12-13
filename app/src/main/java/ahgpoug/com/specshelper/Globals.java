@@ -1,18 +1,34 @@
 package ahgpoug.com.specshelper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.Objects.CPU;
+import ahgpoug.com.specshelper.Objects.Cart;
 import ahgpoug.com.specshelper.Objects.Motherboard;
 
 public class Globals {
+    public static boolean isAdmin = false;
+    public static Cart cart = new Cart();
+
     public static ArrayList<String> getSingleField(Context context, String query, String field){
         ArrayList<String> list = new ArrayList<>();
 
@@ -130,5 +146,30 @@ public class Globals {
         editor.putString("cpuFilter.priceSpinner", "==");
         editor.putString("cpuFilter.price", "");
         editor.apply();
+    }
+
+    public static void showSignInForm(final Context context){
+        MaterialDialog dialog = new MaterialDialog.Builder(context)
+                .title("Вход")
+                .customView(R.layout.prompt_sign_in, true)
+                .cancelable(true)
+                .build();
+
+        final EditText loginET = (EditText)dialog.findViewById(R.id.loginET);
+        final EditText passwordET = (EditText)dialog.findViewById(R.id.passwordET);
+        Button signInBtn = (Button)dialog.findViewById(R.id.signInBtn);
+        signInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (loginET.getText().toString().equals("root") && passwordET.getText().toString().equals("root")) {
+                    Globals.isAdmin = true;
+                    ((Activity) context).finish();
+                    context.startActivity(((Activity) context).getIntent());
+                } else
+                    Toast.makeText(context, "Неверный логин или пароль", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        dialog.show();
     }
 }

@@ -17,5 +17,8 @@
             android:id="@+id/ram"
             android:title="Модули памяти (RAM)" />
 
+        <item
+            android:id="@+id/signIn"
+            android:title="Войти в пользователя" />
     </group>
 </menu>

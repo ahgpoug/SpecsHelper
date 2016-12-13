@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -93,6 +94,17 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (Globals.isAdmin){
+            Menu nav_menu = navigationView.getMenu();
+            nav_menu.findItem(R.id.signIn).setTitle("Выйти из пользователя");
+            View header = navigationView.getHeaderView(0).findViewById(R.id.header);
+            header.setVisibility(View.GONE);
+
+        } else {
+            Menu nav_menu = navigationView.getMenu();
+            nav_menu.findItem(R.id.signIn).setTitle("Войти в пользователя");
+        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -104,6 +116,14 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
             Intent intent = new Intent(ActivityCpu.this, ActivityMotherboard.class);
             startActivity(intent);
             finish();
+        } else if (id == R.id.signIn) {
+            if (!Globals.isAdmin)
+                Globals.showSignInForm(ActivityCpu.this);
+            else{
+                Globals.isAdmin = false;
+                finish();
+                startActivity(getIntent());
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -125,6 +145,8 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        if (!Globals.isAdmin)
+            menu.findItem(R.id.action_add).setVisible(false);
         return true;
     }
 

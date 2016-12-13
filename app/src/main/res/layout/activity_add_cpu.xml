@@ -177,6 +177,5 @@
                 android:text="Подтвердить"/>
         </LinearLayout>
 
-    </ScrollView>>
-
+    </ScrollView>
 </LinearLayout>
