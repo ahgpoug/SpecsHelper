@@ -29,19 +29,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String DATABASE_CREATE_SCRIPT;
 
         DATABASE_CREATE_SCRIPT = "CREATE TABLE sockets (" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "sid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "socketName TEXT NOT NULL)";
 
         db.execSQL(DATABASE_CREATE_SCRIPT);
 
         DATABASE_CREATE_SCRIPT = "CREATE TABLE ramtypes (" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "rid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "ramName TEXT NOT NULL)";
 
         db.execSQL(DATABASE_CREATE_SCRIPT);
 
         DATABASE_CREATE_SCRIPT = "CREATE TABLE formfactors (" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "ffid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "ffName TEXT NOT NULL)";
 
         db.execSQL(DATABASE_CREATE_SCRIPT);

@@ -37,9 +37,9 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
         recyclerView.setHasFixedSize(false);
 
         String query = "SELECT * FROM motherboard " +
-                "INNER JOIN sockets on motherboard.socket = sockets.id " +
-                "INNER JOIN formfactors on motherboard.formFactor = formfactors.id " +
-                "INNER JOIN ramtypes on motherboard.ramType = ramtypes.id";
+                "INNER JOIN sockets on motherboard.socket = sockets.sid " +
+                "INNER JOIN formfactors on motherboard.formFactor = formfactors.ffid " +
+                "INNER JOIN ramtypes on motherboard.ramType = ramtypes.rid";
 
         MotherboardRecyclerAdapter adapter = new MotherboardRecyclerAdapter(ActivityMotherboard.this, Globals.getMotherboardsFromQuery(ActivityMotherboard.this, query));
         recyclerView.setAdapter(adapter);

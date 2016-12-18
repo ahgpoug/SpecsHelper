@@ -68,7 +68,7 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        if (!(Globals.cart.getCpuID() == values.get(position).getId()))
+        if (!(Globals.cart.getCpuID() == values.get(position).getId()) || Globals.isAdmin)
             holder.cart.setVisibility(View.GONE);
         else
             holder.cart.setVisibility(View.VISIBLE);
@@ -130,6 +130,27 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
                         Toast.makeText(context, "Удалено из корзины", Toast.LENGTH_LONG).show();
                         notifyDataSetChanged();
                     }
+                    return false;
+                }
+            });
+        } else {
+            holder.name.getRootView().setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    String query = "DELETE FROM cpu WHERE id = " + values.get(position).getId();
+
+                    DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
+                    SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
+
+                    db.execSQL(query);
+
+
+                    if ((Globals.cart.getCpuID() == values.get(position).getId()))
+                        Globals.cart.setCpuID(-1);
+
+                    values.remove(position);
+                    notifyDataSetChanged();
+                    Toast.makeText(context, "Удалено " + query, Toast.LENGTH_LONG).show();
                     return false;
                 }
             });

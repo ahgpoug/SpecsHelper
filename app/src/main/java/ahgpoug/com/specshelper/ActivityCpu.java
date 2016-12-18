@@ -54,7 +54,7 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setHasFixedSize(false);
 
-        String query = "SELECT * FROM cpu INNER JOIN sockets on cpu.socket = sockets.id";
+        String query = "SELECT * FROM cpu INNER JOIN sockets on cpu.socket = sockets.sid";
 
         CpuRecyclerAdapter adapter = new CpuRecyclerAdapter(ActivityCpu.this, Globals.getCPUsFromQuery(ActivityCpu.this, query));
         recyclerView.setAdapter(adapter);
