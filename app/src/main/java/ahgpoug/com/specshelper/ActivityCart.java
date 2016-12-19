@@ -95,49 +95,49 @@ public class ActivityCart extends AppCompatActivity {
     }
 
     private void performCheck(){
-        String conflicts = "Возможные конфликты:\n\n";
+        String conflicts = "";
         Cart cart = Globals.cart;
         if (cart.getMbID() != -1 && cart.getCpuID() != -1){
             if (!motherboard.getSocket().equals(cpu.getSocket()))
-                conflicts += "Несовместимый Socket\n";
+                conflicts += "Несовместимый Socket\n\n";
         }
 
         if (cart.getMbID() != -1 && cart.getGpuID() != -1){
             if (motherboard.getPcie16count() < cart.getGpuAmount())
-                conflicts += "У материнской платы недостаточно слотов PCI-E x16\n";
+                conflicts += "У материнской платы недостаточно слотов PCI-E x16\n\n";
 
             if (gpu.getManufacturer().equals("AMD") && !gpu.getCodename().contains("GeForce")) {
                 if (cart.getGpuAmount() > 1)
                     if (!motherboard.isCrossFire())
-                        conflicts += "Материнская плата не поддерживает технолонию CrossFire\n";
+                        conflicts += "Материнская плата не поддерживает технолонию CrossFire\n\n";
             } else {
                 if (cart.getGpuAmount() > 1)
                     if (!motherboard.isSli())
-                        conflicts += "Материнская плата не поддерживает технолонию SLI\n";
+                        conflicts += "Материнская плата не поддерживает технолонию SLI\n\n";
             }
         }
 
         if (cart.getMbID() != -1 && cart.getRamID() != -1){
             if (!motherboard.getRamType().contains(ram.getType()))
-                conflicts += "Несовместимый тип RAM\n";
+                conflicts += "Несовместимый тип RAM\n\n";
 
             if (motherboard.getMaxRamCount() < cart.getRamAmount())
-                conflicts += "В материнской плате недостаточно слотов RAM\n";
+                conflicts += "В материнской плате недостаточно слотов RAM\n\n";
 
             if (motherboard.getMaxRamSize() < ram.getMemorySize()*cart.getRamAmount())
-                conflicts += "Превышение максимального объема RAM\n";
+                conflicts += "Превышение максимального объема RAM\n\n";
 
             if (motherboard.getMaxRamClock() < ram.getClock())
-                conflicts += "Превышение максимальной частоты RAM\n";
+                conflicts += "Превышение максимальной частоты RAM\n\n";
         }
 
         if (cart.getGpuID() != -1){
             if (!gpu.isSli() && cart.getGpuAmount() > 1)
-                conflicts += "Видеокарта не поддерживает работу в SLI/CrossFire\n";
+                conflicts += "Видеокарта не поддерживает работу в SLI/CrossFire\n\n";
         }
 
         new MaterialDialog.Builder(ActivityCart.this)
-                .title("Лог")
+                .title("Возможные конфликты")
                 .content(conflicts)
                 .positiveText("Ок")
                 .show();

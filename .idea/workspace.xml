@@ -10,31 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bc4e222-d27b-466a-b901-9ca22736e479" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_gpu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_ram.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_cart.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/CPU.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/CPU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Cart.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Cart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/GPU.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/GPU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Motherboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Motherboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/RAM.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/RAM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/GpuRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/GpuRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/MotherboardRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/MotherboardRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/RamRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/RamRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/DataBaseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/DataBaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCart.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCart.java" />
     </list>
     <ignored path="SpecsHelper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +46,8 @@
       <file leaf-file-name="ActivityCart.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+            <state relative-caret-position="715">
+              <caret line="121" column="57" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2827,8 +2803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+        <state relative-caret-position="715">
+          <caret line="121" column="57" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
