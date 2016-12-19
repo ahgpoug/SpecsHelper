@@ -14,6 +14,8 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.objects.CPU;
+import ahgpoug.com.specshelper.objects.Motherboard;
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
@@ -50,10 +52,15 @@ public class ActivityAddNewMotherboard extends AppCompatActivity{
     ArrayList<String> ramTypeList;
     ArrayList<String> ramTypeIds;
 
+    Motherboard motherboard;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_motherboard);
+
+        motherboard = (Motherboard) getIntent().getExtras().getSerializable("mb");
+
         initViews();
     }
 
@@ -111,7 +118,39 @@ public class ActivityAddNewMotherboard extends AppCompatActivity{
         maxEthernetSpeed = (EditText)findViewById(R.id.maxEthernetSpeedET);
         price = (EditText)findViewById(R.id.priceET);
 
-        setTitle("Добавление новой Motherboard");
+        if (motherboard != null){
+            manufacturer.setText(motherboard.getManufacturer());
+            codename.setText(motherboard.getCodename());
+            chipSet.setText(String.valueOf(motherboard.getChipSet()));
+            maxRamCount.setText(String.valueOf(motherboard.getMaxRamCount()));
+            maxRamSize.setText(String.valueOf(motherboard.getMaxRamSize()));
+            maxRamClock.setText(String.valueOf(motherboard.getMaxRamClock()));
+            ideCount.setText(String.valueOf(motherboard.getIdeCount()));
+            sata6count.setText(String.valueOf(motherboard.getSata6count()));
+            sata3count.setText(String.valueOf(motherboard.getSata3count()));
+            pcie16count.setText(String.valueOf(motherboard.getPcie16count()));
+            pcie1count.setText(String.valueOf(motherboard.getPcie1count()));
+            usb2count.setText(String.valueOf(motherboard.getUsb2count()));
+            usb3count.setText(String.valueOf(motherboard.getUsb3count()));
+            maxEthernetSpeed.setText(String.valueOf(motherboard.getMaxEthernetSpeed()));
+            price.setText(String.valueOf(motherboard.getPrice()));
+
+            socket.setText(motherboard.getSocket());
+            formFactor.setText(motherboard.getFormFactor());
+            ramType.setText(motherboard.getRamType());
+
+            if (motherboard.isSli())
+                sli.setText("Да");
+            else
+                sli.setText("Нет");
+
+            if (motherboard.isCrossFire())
+                crossFire.setText("Да");
+            else
+                crossFire.setText("Нет");
+        }
+
+        setTitle("Motherboard");
         initEvents();
     }
 
@@ -146,9 +185,43 @@ public class ActivityAddNewMotherboard extends AppCompatActivity{
                     if (crossFire.getText().toString().equals("Да"))
                         cfireState = 1;
 
-                    String query = "INSERT INTO motherboard (manufacturer, codename, socket, formFactor, chipSet, ramType, maxRamCount, maxRamSize, maxRamClock, ideCount, sata6count, sata3count, pcie16count, pcie1count, usb2count, usb3count, maxEthernetSpeed, sli, crossFire, price) VALUES" +
-                            "( '" + manufacturer.getText().toString() + "', '" + codename.getText().toString() + "', " + selectedSocket + ", " + selectedFormFactor + ", '" + chipSet.getText().toString() + "', " + selectedRamType + ", " + maxRamCount.getText().toString() + ", '" + maxRamSize.getText().toString() + "', " + maxRamClock.getText().toString() + ", " + ideCount.getText().toString() + ", " + sata6count.getText().toString() + ", " + sata3count.getText().toString() + ", " + pcie16count.getText().toString() + ", " + pcie1count.getText().toString() + ", " + usb2count.getText().toString() + ", " + usb3count.getText().toString() + ", " + maxEthernetSpeed.getText().toString() + ", " + sliState + ", " + cfireState + ", " + price.getText().toString() + ")";
+                    String query = "";
+                    if (motherboard == null) {
+                        query += "INSERT INTO motherboard (manufacturer, codename, socket, formFactor, chipSet, ramType, maxRamCount, maxRamSize, maxRamClock, ideCount, sata6count, sata3count, pcie16count, pcie1count, usb2count, usb3count, maxEthernetSpeed, sli, crossFire, price) VALUES" +
+                                "( '" + manufacturer.getText().toString() + "', '" + codename.getText().toString() +
+                                "', " + selectedSocket + ", " + selectedFormFactor + ", '" + chipSet.getText().toString() +
+                                "', " + selectedRamType + ", " + maxRamCount.getText().toString() +
+                                ", " + maxRamSize.getText().toString() + ", " + maxRamClock.getText().toString() +
+                                ", " + ideCount.getText().toString() + ", " + sata6count.getText().toString() +
+                                ", " + sata3count.getText().toString() + ", " + pcie16count.getText().toString() +
+                                ", " + pcie1count.getText().toString() + ", " + usb2count.getText().toString() +
+                                ", " + usb3count.getText().toString() + ", " + maxEthernetSpeed.getText().toString() +
+                                ", " + sliState + ", " + cfireState + ", " + price.getText().toString() + ")";
 
+                    } else {
+                        query += "UPDATE motherboard SET " +
+                                "manufacturer = '" + manufacturer.getText().toString() + "', " +
+                                "codename = '" + codename.getText().toString() + "', " +
+                                "socket = " + selectedSocket + ", " +
+                                "formFactor = " + selectedFormFactor + ", " +
+                                "chipSet = '" + chipSet.getText().toString() + "', " +
+                                "ramType = " + selectedRamType + ", " +
+                                "maxRamCount = " + maxRamCount.getText().toString() + ", " +
+                                "maxRamSize = " + maxRamSize.getText().toString() + ", " +
+                                "maxRamClock = " + maxRamClock.getText().toString() + ", " +
+                                "ideCount = " + ideCount.getText().toString() + ", " +
+                                "sata6count = " + sata6count.getText().toString() + ", " +
+                                "sata3count = " + sata3count.getText().toString() + ", " +
+                                "pcie16count = " + pcie16count.getText().toString() + ", " +
+                                "pcie1count = " + pcie1count.getText().toString() + ", " +
+                                "usb2count = " + usb2count.getText().toString() + ", " +
+                                "usb3count = " + usb3count.getText().toString() + ", " +
+                                "maxEthernetSpeed = " + maxEthernetSpeed.getText().toString() + ", " +
+                                "sli = " + sliState + ", " +
+                                "crossFire = " + cfireState + ", " +
+                                "price = " + price.getText().toString() + " " +
+                                "WHERE id = " + motherboard.getId();
+                    }
                     db.execSQL(query);
                     finish();
                 }

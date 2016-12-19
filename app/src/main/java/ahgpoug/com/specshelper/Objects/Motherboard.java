@@ -1,6 +1,8 @@
 package ahgpoug.com.specshelper.objects;
 
-public class Motherboard {
+import java.io.Serializable;
+
+public class Motherboard implements Serializable {
     private int id;
     private String manufacturer;
     private String codename;

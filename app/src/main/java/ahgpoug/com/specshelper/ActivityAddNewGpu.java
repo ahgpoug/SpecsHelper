@@ -14,6 +14,8 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.objects.CPU;
+import ahgpoug.com.specshelper.objects.GPU;
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
@@ -34,10 +36,15 @@ public class ActivityAddNewGpu extends AppCompatActivity{
     ArrayList<String> list;
     ArrayList<String> ids;
 
+    GPU gpu;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_gpu);
+
+        gpu = (GPU) getIntent().getExtras().getSerializable("gpu");
+
         initViews();
     }
 
@@ -65,11 +72,29 @@ public class ActivityAddNewGpu extends AppCompatActivity{
         memorySize = (EditText)findViewById(R.id.memorySizeET);
         process = (EditText)findViewById(R.id.processET);
         bus = (EditText)findViewById(R.id.busET);
-        process = (EditText)findViewById(R.id.processET);
         slots = (EditText)findViewById(R.id.slotsET);
         price = (EditText)findViewById(R.id.priceET);
 
-        setTitle("Добавление нового GPU");
+        if (gpu != null){
+            manufacturer.setText(gpu.getManufacturer());
+            codename.setText(gpu.getCodename());
+            cClock.setText(String.valueOf(gpu.getcClock()));
+            mClock.setText(String.valueOf(gpu.getmClock()));
+            memorySize.setText(String.valueOf(gpu.getMemorySize()));
+            process.setText(String.valueOf(gpu.getProcess()));
+            bus.setText(String.valueOf(gpu.getBus()));
+            slots.setText(String.valueOf(gpu.getSlots()));
+            price.setText(String.valueOf(gpu.getPrice()));
+
+            memoryType.setText(gpu.getMemoryType());
+
+            if (gpu.isSli())
+                sli.setText("Да");
+            else
+                sli.setText("Нет");
+        }
+
+        setTitle("GPU");
         initEvents();
     }
 
@@ -98,9 +123,29 @@ public class ActivityAddNewGpu extends AppCompatActivity{
                     if (sli.getText().toString().equals("Да"))
                         sliState = 1;
 
-                    String query = "INSERT INTO gpu (manufacturer, codename, cClock, mClock, memorySize, bus, process, slots, sli, memoryType, price) VALUES" +
-                            "('" + manufacturer.getText().toString() + "', '" + codename.getText().toString() + "', " + cClock.getText().toString() + ", " + mClock.getText().toString() + ", " + memorySize.getText().toString() + ", " + bus.getText().toString() + ", " + process.getText().toString() + ", " + slots.getText().toString() + ", " + sliState + ", " + selectedMemoryType + ", " + price.getText().toString() + ")";
-
+                    String query = "";
+                    if (gpu == null) {
+                        query += "INSERT INTO gpu (manufacturer, codename, cClock, mClock, memorySize, bus, process, slots, sli, memoryType, price) VALUES" +
+                                "('" + manufacturer.getText().toString() + "', '" + codename.getText().toString() +
+                                "', " + cClock.getText().toString() + ", " + mClock.getText().toString() +
+                                ", " + memorySize.getText().toString() + ", " + bus.getText().toString() +
+                                ", " + process.getText().toString() + ", " + slots.getText().toString() +
+                                ", " + sliState + ", " + selectedMemoryType + ", " + price.getText().toString() + ")";
+                    } else{
+                        query += "UPDATE gpu SET " +
+                                "manufacturer = '" + manufacturer.getText().toString() + "', " +
+                                "codename = '" + codename.getText().toString() + "', " +
+                                "cClock = " + cClock.getText().toString() + ", " +
+                                "mClock = " + mClock.getText().toString() + ", " +
+                                "memorySize = " + memorySize.getText().toString() + ", " +
+                                "bus = " + bus.getText().toString() + ", " +
+                                "process = " + process.getText().toString() + ", " +
+                                "slots = " + slots.getText().toString() + ", " +
+                                "sli = " + sliState + ", " +
+                                "memoryType = " + selectedMemoryType + ", " +
+                                "price = " + price.getText().toString() + " " +
+                                "WHERE id = " + gpu.getId();
+                    }
                     db.execSQL(query);
                     finish();
                 }

@@ -14,6 +14,8 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.objects.CPU;
+import ahgpoug.com.specshelper.objects.RAM;
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
@@ -29,10 +31,15 @@ public class ActivityAddNewRam extends AppCompatActivity{
     ArrayList<String> list;
     ArrayList<String> ids;
 
+    RAM ram;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ram);
+
+        ram = (RAM) getIntent().getExtras().getSerializable("ram");
+
         initViews();
     }
 
@@ -56,7 +63,17 @@ public class ActivityAddNewRam extends AppCompatActivity{
         memorySize = (EditText)findViewById(R.id.memorySizeET);
         price = (EditText)findViewById(R.id.priceET);
 
-        setTitle("Добавление новой RAM");
+        if (ram != null){
+            manufacturer.setText(ram.getManufacturer());
+            codename.setText(ram.getCodename());
+            clock.setText(String.valueOf(ram.getClock()));
+            memorySize.setText(String.valueOf(ram.getMemorySize()));
+            price.setText(String.valueOf(ram.getPrice()));
+
+            type.setText(ram.getType());
+        }
+
+        setTitle("RAM");
         initEvents();
     }
 
@@ -80,9 +97,22 @@ public class ActivityAddNewRam extends AppCompatActivity{
 
                     int selectedMemoryType = Integer.parseInt(ids.get(list.indexOf(type.getText().toString())));
 
-                    String query = "INSERT INTO ram (manufacturer, codename, clock, memorySize, type, price) VALUES" +
-                            "('" + manufacturer.getText().toString() + "', '" + codename.getText().toString() + "', " + clock.getText().toString() + ", " + memorySize.getText().toString() + ", " + selectedMemoryType + ", " + price.getText().toString() + ")";
-
+                    String query = "";
+                    if (ram == null) {
+                        query += "INSERT INTO ram (manufacturer, codename, clock, memorySize, type, price) VALUES" +
+                                "('" + manufacturer.getText().toString() + "', '" + codename.getText().toString() +
+                                "', " + clock.getText().toString() + ", " + memorySize.getText().toString() +
+                                ", " + selectedMemoryType + ", " + price.getText().toString() + ")";
+                    } else {
+                        query += "UPDATE ram SET " +
+                                "manufacturer = '" + manufacturer.getText().toString() + "', " +
+                                "codename = '" + codename.getText().toString() + "', " +
+                                "clock = " + clock.getText().toString() + ", " +
+                                "memorySize = " + memorySize.getText().toString() + ", " +
+                                "type = " + selectedMemoryType + ", " +
+                                "price = " + price.getText().toString() + " " +
+                                "WHERE id = " + ram.getId();
+                    }
                     db.execSQL(query);
                     finish();
                 }

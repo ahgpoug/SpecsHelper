@@ -104,10 +104,10 @@ public class Globals {
                 int usb3count = cursor.getInt(cursor.getColumnIndex("usb3count"));
                 int maxEthernetSpeed = cursor.getInt(cursor.getColumnIndex("maxEthernetSpeed"));
                 boolean sli = false;
-                if (cursor.getInt(cursor.getColumnIndex("sli")) == 0)
+                if (cursor.getInt(cursor.getColumnIndex("sli")) == 1)
                     sli = true;
                 boolean crossFire = false;
-                if (cursor.getInt(cursor.getColumnIndex("crossFire")) == 0)
+                if (cursor.getInt(cursor.getColumnIndex("crossFire")) == 1)
                     crossFire = true;
                 int price = cursor.getInt(cursor.getColumnIndex("price"));
 

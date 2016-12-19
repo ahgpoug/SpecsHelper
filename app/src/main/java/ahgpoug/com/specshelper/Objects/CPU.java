@@ -1,6 +1,8 @@
 package ahgpoug.com.specshelper.objects;
 
-public class CPU {
+import java.io.Serializable;
+
+public class CPU implements Serializable{
 
     private int id;
     private String manufacturer;

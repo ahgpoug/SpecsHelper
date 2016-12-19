@@ -1,6 +1,8 @@
 package ahgpoug.com.specshelper.objects;
 
-public class RAM {
+import java.io.Serializable;
+
+public class RAM implements Serializable {
     private int id;
     private String manufacturer;
     private String codename;

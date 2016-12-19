@@ -55,6 +55,12 @@ public class ActivityGpu extends AppCompatActivity implements NavigationView.OnN
         super.onStop();
     }
 
+    @Override
+    protected void onResume() {
+        initViews();
+        super.onResume();
+    }
+
     private void initViews(){
         FiltersHelper.clearGpuFilter(ActivityGpu.this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);

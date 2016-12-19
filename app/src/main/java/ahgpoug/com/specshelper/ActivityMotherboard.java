@@ -56,6 +56,12 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
         super.onStop();
     }
 
+    @Override
+    protected void onResume() {
+        initViews();
+        super.onResume();
+    }
+
     private void initViews(){
         FiltersHelper.clearMotherboardFilter(ActivityMotherboard.this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);

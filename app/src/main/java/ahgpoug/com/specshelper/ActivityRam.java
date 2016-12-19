@@ -56,6 +56,12 @@ public class ActivityRam extends AppCompatActivity implements NavigationView.OnN
         super.onStop();
     }
 
+    @Override
+    protected void onResume() {
+        initViews();
+        super.onResume();
+    }
+
     private void initViews(){
         FiltersHelper.clearRamFilter(ActivityRam.this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);

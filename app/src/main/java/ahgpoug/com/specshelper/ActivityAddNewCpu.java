@@ -14,6 +14,7 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.objects.CPU;
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
@@ -32,10 +33,15 @@ public class ActivityAddNewCpu extends AppCompatActivity{
     ArrayList<String> list;
     ArrayList<String> ids;
 
+    CPU cpu;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cpu);
+
+        cpu = (CPU) getIntent().getExtras().getSerializable("cpu");
+
         initViews();
     }
 
@@ -61,7 +67,21 @@ public class ActivityAddNewCpu extends AppCompatActivity{
         release = (EditText)findViewById(R.id.releaseET);
         price = (EditText)findViewById(R.id.priceET);
 
-        setTitle("Добавление нового CPU");
+        if (cpu != null){
+            manufacturer.setText(cpu.getManufacturer());
+            codename.setText(cpu.getCodename());
+            coresCount.setText(String.valueOf(cpu.getCoresCount()));
+            coreClock.setText(String.valueOf(cpu.getClock()));
+            gpu.setText(cpu.getGpuType());
+            process.setText(String.valueOf(cpu.getProcess()));
+            tdp.setText(String.valueOf(cpu.getTdp()));
+            release.setText(String.valueOf(cpu.getRelease()));
+            price.setText(String.valueOf(cpu.getPrice()));
+
+            betterSpinner.setText(cpu.getSocket());
+        }
+
+        setTitle("CPU");
         initEvents();
     }
 
@@ -84,8 +104,29 @@ public class ActivityAddNewCpu extends AppCompatActivity{
                     SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
 
                     int selectedSocket = Integer.parseInt(ids.get(list.indexOf(betterSpinner.getText().toString())));
-                    String query = "INSERT INTO cpu (manufacturer, codename, socket, coresCount, process, clock, tdp, gpuType, release, price) VALUES" +
-                            "( '" + manufacturer.getText().toString() + "', '" + codename.getText().toString() + "', " + selectedSocket + ", " + coresCount.getText().toString() + ", " + process.getText().toString() + ", " + coreClock.getText().toString() + ", " + tdp.getText().toString() + ", '" + gpu.getText().toString() + "', " + release.getText().toString() + ", " + price.getText().toString() + ")";
+
+                    String query = "";
+                    if (cpu == null) {
+                        query += "INSERT INTO cpu (manufacturer, codename, socket, coresCount, process, clock, tdp, gpuType, release, price) VALUES" +
+                                "( '" + manufacturer.getText().toString() + "', '" + codename.getText().toString() +
+                                "', " + selectedSocket + ", " + coresCount.getText().toString() +
+                                ", " + process.getText().toString() + ", " + coreClock.getText().toString() +
+                                ", " + tdp.getText().toString() + ", '" + gpu.getText().toString() +
+                                "', " + release.getText().toString() + ", " + price.getText().toString() + ")";
+                    } else {
+                        query += "UPDATE cpu SET " +
+                                "manufacturer = '" + manufacturer.getText().toString() + "', " +
+                                "codename = '" + codename.getText().toString() + "', " +
+                                "socket = " + selectedSocket + ", " +
+                                "coresCount = " + coresCount.getText().toString() + ", " +
+                                "process = " + process.getText().toString() + ", " +
+                                "clock = " + coreClock.getText().toString() + ", " +
+                                "tdp = " + tdp.getText().toString() + ", " +
+                                "gpuType = '" + gpu.getText().toString() + "', " +
+                                "release = " + release.getText().toString() + ", " +
+                                "price = " + price.getText().toString() + " " +
+                                "WHERE id = " + cpu.getId();
+                    }
 
                     db.execSQL(query);
                     finish();

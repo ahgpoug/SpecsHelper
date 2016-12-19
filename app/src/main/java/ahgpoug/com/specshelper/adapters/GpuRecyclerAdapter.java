@@ -2,6 +2,7 @@ package ahgpoug.com.specshelper.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,8 +17,11 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.ActivityAddNewCpu;
+import ahgpoug.com.specshelper.ActivityAddNewGpu;
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
 import ahgpoug.com.specshelper.objects.GPU;
@@ -170,19 +174,39 @@ public class GpuRecyclerAdapter extends RecyclerView.Adapter<GpuRecyclerAdapter.
             holder.name.getRootView().setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    String query = "DELETE FROM gpu WHERE id = " + values.get(position).getId();
+                    new MaterialDialog.Builder(context)
+                            .title("Действия")
+                            .items(new String[] {"Изменить", "Удалить"})
+                            .itemsCallback(new MaterialDialog.ListCallback() {
+                                @Override
+                                public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                    if (text.equals("Удалить")){
+                                        String query = "DELETE FROM gpu WHERE id = " + values.get(position).getId();
 
-                    DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
-                    SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
+                                        DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
+                                        SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
 
-                    db.execSQL(query);
+                                        db.execSQL(query);
 
-                    if ((Globals.cart.getGpuID() == values.get(position).getId()))
-                        Globals.cart.setGpuID(-1);
+                                        if ((Globals.cart.getGpuID() == values.get(position).getId()))
+                                            Globals.cart.setGpuID(-1);
 
-                    values.remove(position);
-                    notifyDataSetChanged();
-                    Toast.makeText(context, "Удалено", Toast.LENGTH_LONG).show();
+                                        values.remove(position);
+                                        notifyDataSetChanged();
+                                        Toast.makeText(context, "Удалено", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Intent intent = new Intent(context, ActivityAddNewGpu.class);
+                                        intent.putExtra("gpu", (Serializable) values.get(position));
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        context.startActivity(intent);
+
+                                        if ((Globals.cart.getGpuID() == values.get(position).getId()))
+                                            Globals.cart.setGpuID(-1);
+                                        notifyDataSetChanged();
+                                    }
+                                }
+                            })
+                            .show();
                     return false;
                 }
             });
