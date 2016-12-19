@@ -26,6 +26,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.weiwangcn.betterspinner.library.BetterSpinner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.objects.Motherboard;
@@ -191,6 +192,7 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
         int id = item.getItemId();
         if (id == R.id.action_add){
             Intent intent = new Intent(ActivityMotherboard.this, ActivityAddNewMotherboard.class);
+            intent.putExtra("mb", (Serializable) null);
             startActivity(intent);
         } else if (id == R.id.action_filter){
             MaterialDialog dialog;

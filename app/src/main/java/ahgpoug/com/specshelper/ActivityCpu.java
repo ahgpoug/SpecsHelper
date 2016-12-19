@@ -26,6 +26,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.weiwangcn.betterspinner.library.BetterSpinner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.objects.CPU;
@@ -188,6 +189,7 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
         int id = item.getItemId();
         if (id == R.id.action_add){
             Intent intent = new Intent(ActivityCpu.this, ActivityAddNewCpu.class);
+            intent.putExtra("cpu", (Serializable) null);
             startActivity(intent);
         } else if (id == R.id.action_filter){
             MaterialDialog dialog;

@@ -11,23 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3bc4e222-d27b-466a-b901-9ca22736e479" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewGpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewGpu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/CPU.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/CPU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/GPU.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/GPU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Motherboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/Motherboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/RAM.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/Objects/RAM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/GpuRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/GpuRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/MotherboardRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/MotherboardRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/RamRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/RamRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java" afterPath="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java" />
     </list>
     <ignored path="SpecsHelper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,26 +28,6 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DockManager">
-    <window id="7">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="ActivityAddNewMotherboard.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="278">
-                    <caret line="198" column="77" selection-start-line="198" selection-start-column="77" selection-end-line="198" selection-end-column="77" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
@@ -80,21 +47,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityAddNewCpu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java">
+      <file leaf-file-name="ActivityCpu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="127" selection-end-column="60" />
+            <state relative-caret-position="309">
+              <caret line="192" column="34" selection-start-line="192" selection-start-column="34" selection-end-line="192" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityAddNewRam.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActivityGpu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="190" column="32" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityMotherboard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="194" column="31" selection-start-line="194" selection-start-column="31" selection-end-line="194" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityRam.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="191" column="32" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityAddNewCpu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="42" column="67" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CpuRecyclerAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="165" column="78" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityAddNewRam.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1145">
-              <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+            <state relative-caret-position="-578">
+              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -1882,10 +1899,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/objects/GPU.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/objects/Motherboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/objects/RAM.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/MotherboardRecyclerAdapter.java" />
@@ -1895,6 +1908,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java" />
       </list>
     </option>
   </component>
@@ -1949,64 +1966,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpecsHelper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpecsHelper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpecsHelper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2024,28 +1983,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="specshelper" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpecsHelper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="specshelper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2398,7 +2335,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34075725" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26169264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2731,46 +2668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="164" column="40" selection-start-line="164" selection-start-column="40" selection-end-line="171" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/RamRecyclerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -2814,14 +2711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="198" column="77" selection-start-line="198" selection-start-column="77" selection-end-line="198" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/util/Globals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -2830,18 +2719,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewMotherboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="127" selection-end-column="60" />
+        <state relative-caret-position="278">
+          <caret line="198" column="77" selection-start-line="198" selection-start-column="77" selection-end-line="198" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewRam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1145">
-          <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+        <state relative-caret-position="-578">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityAddNewCpu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/adapters/CpuRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="165" column="78" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityCpu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="192" column="34" selection-start-line="192" selection-start-column="34" selection-end-line="192" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityGpu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="190" column="32" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityMotherboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="194" column="31" selection-start-line="194" selection-start-column="31" selection-end-line="194" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ahgpoug/com/specshelper/ActivityRam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="191" column="32" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
           <folding />
         </state>
       </provider>
