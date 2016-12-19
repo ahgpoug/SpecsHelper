@@ -22,7 +22,22 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
+            android:name=".ActivityGpu"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ActivityRam"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".ActivityAddNewCpu"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ActivityAddNewMotherboard"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
     </application>

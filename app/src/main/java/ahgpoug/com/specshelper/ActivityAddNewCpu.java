@@ -7,13 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
+
+import ahgpoug.com.specshelper.util.DataBaseHelper;
+import ahgpoug.com.specshelper.util.Globals;
 
 public class ActivityAddNewCpu extends AppCompatActivity{
     BetterSpinner betterSpinner;
@@ -43,7 +45,7 @@ public class ActivityAddNewCpu extends AppCompatActivity{
 
         betterSpinner = (BetterSpinner)findViewById(R.id.socket);
         list = Globals.getSingleField(ActivityAddNewCpu.this, "SELECT * FROM sockets", "socketName");
-        ids = Globals.getSingleField(ActivityAddNewCpu.this, "SELECT * FROM sockets", "id");
+        ids = Globals.getSingleField(ActivityAddNewCpu.this, "SELECT * FROM sockets", "sid");
 
         ArrayAdapter<String> categoriesAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, list);
         betterSpinner.setAdapter(categoriesAdapter);
@@ -59,6 +61,7 @@ public class ActivityAddNewCpu extends AppCompatActivity{
         release = (EditText)findViewById(R.id.releaseET);
         price = (EditText)findViewById(R.id.priceET);
 
+        setTitle("Добавление нового CPU");
         initEvents();
     }
 

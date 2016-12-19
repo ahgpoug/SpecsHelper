@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/manufacturer_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <EditText
+            android:id="@+id/manufacturerET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:width="350dp"
+            android:hint="Производитель"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/codename_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <EditText
+            android:id="@+id/codenameET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:width="350dp"
+            android:hint="Название"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/socket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/formFactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/chipSet_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <EditText
+            android:id="@+id/chipSetET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:width="350dp"
+            android:hint="Чипсет"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/ramType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/maxRamCountSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/maxRamCount_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/maxRamCountET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Количество слотов памяти (шт.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/maxRamSizeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/maxRamSize_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/maxRamSizeET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Максимальный объем памяти (Гб.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/maxRamClockSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/maxRamClock_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/maxRamClockET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Максимальная частота памяти (МГц.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/sli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <com.weiwangcn.betterspinner.library.BetterSpinner
+        android:id="@+id/cfire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="350dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="350dp">
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/priceSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginTop="11dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/price_layout"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/priceET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:width="350dp"
+                android:hint="Цена (руб.)"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+</LinearLayout>

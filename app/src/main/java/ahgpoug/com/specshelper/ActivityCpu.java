@@ -15,14 +15,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -32,6 +30,8 @@ import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.Objects.CPU;
 import ahgpoug.com.specshelper.adapters.CpuRecyclerAdapter;
+import ahgpoug.com.specshelper.util.FiltersHelper;
+import ahgpoug.com.specshelper.util.Globals;
 
 public class ActivityCpu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
@@ -42,13 +42,21 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler);
 
+        FiltersHelper.clearCpuFilter(ActivityCpu.this);
+
         initViews();
         initEvents();
         initDrawer();
     }
 
+    @Override
+    protected void onStop() {
+        FiltersHelper.clearCpuFilter(ActivityCpu.this);
+        super.onStop();
+    }
+
     private void initViews(){
-        Globals.clearCpuFilter(ActivityCpu.this);
+        FiltersHelper.clearCpuFilter(ActivityCpu.this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(ActivityCpu.this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -114,6 +122,14 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
 
         if (id == R.id.motherboard) {
             Intent intent = new Intent(ActivityCpu.this, ActivityMotherboard.class);
+            startActivity(intent);
+            finish();
+        } else if (id == R.id.gpu) {
+            Intent intent = new Intent(ActivityCpu.this, ActivityGpu.class);
+            startActivity(intent);
+            finish();
+        } else if (id == R.id.ram) {
+            Intent intent = new Intent(ActivityCpu.this, ActivityRam.class);
             startActivity(intent);
             finish();
         } else if (id == R.id.signIn) {
@@ -374,7 +390,7 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
 
                     ArrayList<CPU> list = Globals.getCPUsFromQuery(ActivityCpu.this, query);
 
-                    Toast.makeText(ActivityCpu.this, query, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(ActivityCpu.this, query, Toast.LENGTH_LONG).show();
                     LinearLayoutManager mLayoutManager = new LinearLayoutManager(ActivityCpu.this, LinearLayoutManager.VERTICAL, false);
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setHasFixedSize(false);

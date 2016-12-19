@@ -30,7 +30,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/m"/>
+                    android:src="@drawable/g"/>
 
                 <LinearLayout
                     android:layout_weight="1"
@@ -41,61 +41,68 @@
 
                     <TextView
                         android:id="@+id/name"
-                        android:text="ASUS Z170-A"
+                        android:text="Gigabyte GeForce GTX 1070"
                         android:textSize="25dp"
                         android:textColor="@color/colorPrimary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/socket"
+                        android:id="@+id/cClock"
                         android:paddingTop="4dp"
-                        android:text="Socket: LGA1151"
+                        android:text="Часота ГП: 1696 МГц"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/formFactor"
-                        android:text="Форм-фактор: ATX"
+                        android:id="@+id/mClock"
+                        android:text="Частота видеопамяти: 8316 МГц"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/chipSet"
-                        android:text="Чипсет: Intel Z170"
+                        android:id="@+id/memorySize"
+                        android:text="Объем видеопамяти: 8192 Мб"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/ram"
-                        android:text="4 слота DDR4 DIMM, 3400 МГц"
+                        android:id="@+id/memoryType"
+                        android:text="Тип памяти: GDDR5"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/io"
-                        android:text="ide: 0, SATA 6Гбит/с: 6, SATA 3Гбит/с: 0, PCI-E x16: 3, PCI-E x1: 3"
+                        android:id="@+id/bus"
+                        android:text="Шина: 256 бит"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/slicfire"
-                        android:text="SLI: да, crossFire: да"
+                        android:id="@+id/process"
+                        android:text="Техпроцесс: 16 нм"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/maxEthernet"
-                        android:text="1000 Мбит/сек"
+                        android:id="@+id/slots"
+                        android:text="Занимает слотов: 2"
                         android:textSize="18dp"
                         android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/sli"
+                        android:text="Поддержска SLI/CrossFire: да"
+                        android:textSize="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -108,15 +115,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/price"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:text="Цена: 10690 руб."
+                    android:text="Цена: 24990 руб."
                     android:textSize="26dp"
-                    android:layout_weight="1"
                     android:textColor="@color/colorPrimary"
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
                 <ImageView
                     android:id="@+id/cartImage"
                     android:src="@drawable/ic_shopping_cart_black_48dp"

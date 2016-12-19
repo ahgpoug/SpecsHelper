@@ -3,7 +3,6 @@ package ahgpoug.com.specshelper.adapters;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +14,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import ahgpoug.com.specshelper.DataBaseHelper;
-import ahgpoug.com.specshelper.Globals;
+import ahgpoug.com.specshelper.util.DataBaseHelper;
+import ahgpoug.com.specshelper.util.Globals;
 import ahgpoug.com.specshelper.Objects.CPU;
 import ahgpoug.com.specshelper.R;
 
@@ -150,7 +149,7 @@ public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.
 
                     values.remove(position);
                     notifyDataSetChanged();
-                    Toast.makeText(context, "Удалено " + query, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Удалено", Toast.LENGTH_LONG).show();
                     return false;
                 }
             });

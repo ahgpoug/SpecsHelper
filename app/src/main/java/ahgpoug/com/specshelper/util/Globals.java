@@ -1,29 +1,24 @@
-package ahgpoug.com.specshelper;
+package ahgpoug.com.specshelper.util;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.Objects.CPU;
 import ahgpoug.com.specshelper.Objects.Cart;
+import ahgpoug.com.specshelper.Objects.GPU;
 import ahgpoug.com.specshelper.Objects.Motherboard;
+import ahgpoug.com.specshelper.Objects.RAM;
+import ahgpoug.com.specshelper.R;
 
 public class Globals {
     public static boolean isAdmin = false;
@@ -96,7 +91,7 @@ public class Globals {
                 String socket = cursor.getString(cursor.getColumnIndex("socketName"));
                 String formFactor = cursor.getString(cursor.getColumnIndex("ffName"));
                 String chipSet = cursor.getString(cursor.getColumnIndex("chipSet"));
-                String ramType = cursor.getString(cursor.getColumnIndex("ramName"));
+                String ramType = cursor.getString(cursor.getColumnIndex("rName"));
                 int maxRamCount = cursor.getInt(cursor.getColumnIndex("maxRamCount"));
                 int maxRamClock = cursor.getInt(cursor.getColumnIndex("maxRamClock"));
                 int maxRamSize= cursor.getInt(cursor.getColumnIndex("maxRamSize"));
@@ -126,26 +121,67 @@ public class Globals {
         return list;
     }
 
-    public static void clearCpuFilter(Context context){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("cpuFilter.manufacturer", "");
-        editor.putString("cpuFilter.codename", "");
-        editor.putString("cpuFilter.socket", "Socket");
-        editor.putString("cpuFilter.coresCountSpinner", "==");
-        editor.putString("cpuFilter.coresCount", "");
-        editor.putString("cpuFilter.clockSpinner", "==");
-        editor.putString("cpuFilter.clock", "");
-        editor.putString("cpuFilter.gpu", "Встроенный GPU");
-        editor.putString("cpuFilter.processSpinner", "==");
-        editor.putString("cpuFilter.process", "");
-        editor.putString("cpuFilter.tdpSpinner", "==");
-        editor.putString("cpuFilter.tdp", "");
-        editor.putString("cpuFilter.releaseSpinner", "==");
-        editor.putString("cpuFilter.release", "");
-        editor.putString("cpuFilter.priceSpinner", "==");
-        editor.putString("cpuFilter.price", "");
-        editor.apply();
+    public static ArrayList<GPU> getGPUsFromQuery(Context context, String query){
+        ArrayList<GPU> list = new ArrayList<>();
+
+        DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
+        SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor .moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                int id = cursor.getInt(cursor.getColumnIndex("id"));
+                String manufacturer = cursor.getString(cursor.getColumnIndex("manufacturer"));
+                String codename = cursor.getString(cursor.getColumnIndex("codename"));
+                int cClock = cursor.getInt(cursor.getColumnIndex("cClock"));
+                int mClock = cursor.getInt(cursor.getColumnIndex("mClock"));
+                int memorySize = cursor.getInt(cursor.getColumnIndex("memorySize"));
+                String memoryType = cursor.getString(cursor.getColumnIndex("mName"));
+                int bus = cursor.getInt(cursor.getColumnIndex("bus"));
+                int process = cursor.getInt(cursor.getColumnIndex("process"));
+                int slots = cursor.getInt(cursor.getColumnIndex("slots"));
+                int sli = cursor.getInt(cursor.getColumnIndex("sli"));
+                int price = cursor.getInt(cursor.getColumnIndex("price"));
+
+                boolean isSli = false;
+                if (sli == 1)
+                    isSli = true;
+
+                list.add(new GPU(id, manufacturer, codename, cClock, mClock, memorySize, memoryType, bus, process, slots, isSli, price));
+                cursor.moveToNext();
+            }
+        }
+        db.close();
+        cursor.close();
+
+        return list;
+    }
+
+    public static ArrayList<RAM> getRamFromQuery(Context context, String query){
+        ArrayList<RAM> list = new ArrayList<>();
+
+        DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
+        SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor .moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                int id = cursor.getInt(cursor.getColumnIndex("id"));
+                String manufacturer = cursor.getString(cursor.getColumnIndex("manufacturer"));
+                String codename = cursor.getString(cursor.getColumnIndex("codename"));
+                int clock = cursor.getInt(cursor.getColumnIndex("clock"));
+                int memorySize = cursor.getInt(cursor.getColumnIndex("memorySize"));
+                String type = cursor.getString(cursor.getColumnIndex("rName"));
+                int price = cursor.getInt(cursor.getColumnIndex("price"));
+
+                list.add(new RAM(id, manufacturer, codename, clock, memorySize, type, price));
+                cursor.moveToNext();
+            }
+        }
+        db.close();
+        cursor.close();
+
+        return list;
     }
 
     public static void showSignInForm(final Context context){

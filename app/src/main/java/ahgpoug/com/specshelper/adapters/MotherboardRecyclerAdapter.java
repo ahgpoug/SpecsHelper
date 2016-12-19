@@ -2,15 +2,19 @@ package ahgpoug.com.specshelper.adapters;
 
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import ahgpoug.com.specshelper.util.DataBaseHelper;
+import ahgpoug.com.specshelper.util.Globals;
 import ahgpoug.com.specshelper.Objects.Motherboard;
 import ahgpoug.com.specshelper.R;
 
@@ -30,6 +34,7 @@ public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<Motherboard
         private TextView slicfire;
         private TextView maxEthernet;
         private TextView price;
+        private ImageView cart;
 
         private ViewHolder(View view) {
             super(view);
@@ -43,6 +48,7 @@ public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<Motherboard
             slicfire = (TextView) view.findViewById(R.id.slicfire);
             maxEthernet = (TextView) view.findViewById(R.id.maxEthernet);
             price = (TextView) view.findViewById(R.id.price);
+            cart = (ImageView) view.findViewById(R.id.cartImage);
         }
     }
 
@@ -60,6 +66,11 @@ public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<Motherboard
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+        if (!(Globals.cart.getMbID() == values.get(position).getId()) || Globals.isAdmin)
+            holder.cart.setVisibility(View.GONE);
+        else
+            holder.cart.setVisibility(View.VISIBLE);
+
         holder.name.setText(values.get(position).getManufacturer() + " " + values.get(position).getCodename());
         holder.socket.setText("Socket: " + values.get(position).getSocket());
         holder.formFactor.setText("Форм-фактор: " + values.get(position).getFormFactor());
@@ -82,6 +93,7 @@ public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<Motherboard
             holder.ram.setVisibility(View.GONE);
             holder.io.setVisibility(View.GONE);
             holder.slicfire.setVisibility(View.GONE);
+            holder.maxEthernet.setVisibility(View.GONE);
         }
 
         holder.name.getRootView().setOnClickListener(new View.OnClickListener() {
@@ -102,6 +114,45 @@ public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<Motherboard
                 }
             }
         });
+
+        if (!Globals.isAdmin){holder.name.getRootView().setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (!(Globals.cart.getMbID() == values.get(position).getId())) {
+                    Globals.cart.setMbID(values.get(position).getId());
+
+                    Toast.makeText(context, "Добавлено в корзину", Toast.LENGTH_LONG).show();
+                    notifyDataSetChanged();
+                } else {
+                    Globals.cart.setMbID(-1);
+
+                    Toast.makeText(context, "Удалено из корзины", Toast.LENGTH_LONG).show();
+                    notifyDataSetChanged();
+                }
+                return false;
+            }
+        });
+        } else {
+            holder.name.getRootView().setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    String query = "DELETE FROM motherboard WHERE id = " + values.get(position).getId();
+
+                    DataBaseHelper mDatabaseHelper = new DataBaseHelper(context);
+                    SQLiteDatabase db = mDatabaseHelper.getWritableDatabase();
+
+                    db.execSQL(query);
+
+                    if ((Globals.cart.getMbID() == values.get(position).getId()))
+                        Globals.cart.setMbID(-1);
+
+                    values.remove(position);
+                    notifyDataSetChanged();
+                    Toast.makeText(context, "Удалено", Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            });
+        }
     }
 
     @Override
