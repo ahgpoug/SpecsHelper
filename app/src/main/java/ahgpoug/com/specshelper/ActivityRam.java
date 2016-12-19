@@ -28,14 +28,15 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
-import ahgpoug.com.specshelper.Objects.RAM;
+import ahgpoug.com.specshelper.objects.RAM;
 import ahgpoug.com.specshelper.adapters.RamRecyclerAdapter;
 import ahgpoug.com.specshelper.util.FiltersHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
 public class ActivityRam extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class ActivityRam extends AppCompatActivity implements NavigationView.OnN
         FiltersHelper.clearRamFilter(ActivityRam.this);
 
         initViews();
-        initEvents();
         initDrawer();
+        initEvents();
     }
 
     @Override
@@ -81,6 +82,8 @@ public class ActivityRam extends AppCompatActivity implements NavigationView.OnN
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        header = navigationView.getHeaderView(0).findViewById(R.id.header);
+
         if (Globals.isAdmin){
             Menu nav_menu = navigationView.getMenu();
             nav_menu.findItem(R.id.signIn).setTitle("Выйти из пользователя");
@@ -113,6 +116,14 @@ public class ActivityRam extends AppCompatActivity implements NavigationView.OnN
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityRam.this, ActivityCart.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -170,7 +181,7 @@ public class ActivityRam extends AppCompatActivity implements NavigationView.OnN
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_add){
-            Intent intent = new Intent(ActivityRam.this, ActivityAddNewMotherboard.class);
+            Intent intent = new Intent(ActivityRam.this, ActivityAddNewRam.class);
             startActivity(intent);
         } else if (id == R.id.action_filter){
             MaterialDialog dialog;

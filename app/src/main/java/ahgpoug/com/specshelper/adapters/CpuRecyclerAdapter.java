@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
-import ahgpoug.com.specshelper.Objects.CPU;
+import ahgpoug.com.specshelper.objects.CPU;
 import ahgpoug.com.specshelper.R;
 
 public class CpuRecyclerAdapter extends RecyclerView.Adapter<CpuRecyclerAdapter.ViewHolder> {

@@ -177,7 +177,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "('GDDR3')," +
                 "('GDDR4')," +
                 "('GDDR5')," +
-                "('GDDR5')," +
                 "('HBM')";
 
         db.execSQL(DATABASE_INSERT_SCRIPT);

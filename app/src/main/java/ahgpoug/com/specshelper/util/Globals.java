@@ -13,11 +13,11 @@ import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 
-import ahgpoug.com.specshelper.Objects.CPU;
-import ahgpoug.com.specshelper.Objects.Cart;
-import ahgpoug.com.specshelper.Objects.GPU;
-import ahgpoug.com.specshelper.Objects.Motherboard;
-import ahgpoug.com.specshelper.Objects.RAM;
+import ahgpoug.com.specshelper.objects.CPU;
+import ahgpoug.com.specshelper.objects.Cart;
+import ahgpoug.com.specshelper.objects.GPU;
+import ahgpoug.com.specshelper.objects.Motherboard;
+import ahgpoug.com.specshelper.objects.RAM;
 import ahgpoug.com.specshelper.R;
 
 public class Globals {

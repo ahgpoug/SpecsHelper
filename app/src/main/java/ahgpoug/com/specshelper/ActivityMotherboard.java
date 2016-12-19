@@ -28,14 +28,15 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
-import ahgpoug.com.specshelper.Objects.Motherboard;
+import ahgpoug.com.specshelper.objects.Motherboard;
 import ahgpoug.com.specshelper.adapters.MotherboardRecyclerAdapter;
 import ahgpoug.com.specshelper.util.FiltersHelper;
 import ahgpoug.com.specshelper.util.Globals;
 
 public class ActivityMotherboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
         FiltersHelper.clearMotherboardFilter(ActivityMotherboard.this);
 
         initViews();
-        initEvents();
         initDrawer();
+        initEvents();
     }
 
     @Override
@@ -84,6 +85,8 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        header = navigationView.getHeaderView(0).findViewById(R.id.header);
+
         if (Globals.isAdmin){
             Menu nav_menu = navigationView.getMenu();
             nav_menu.findItem(R.id.signIn).setTitle("Выйти из пользователя");
@@ -116,6 +119,14 @@ public class ActivityMotherboard extends AppCompatActivity implements Navigation
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityMotherboard.this, ActivityCart.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

@@ -1,4 +1,4 @@
-package ahgpoug.com.specshelper.Objects;
+package ahgpoug.com.specshelper.objects;
 
 public class CPU {
 

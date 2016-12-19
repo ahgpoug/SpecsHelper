@@ -28,7 +28,7 @@ import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import java.util.ArrayList;
 
-import ahgpoug.com.specshelper.Objects.CPU;
+import ahgpoug.com.specshelper.objects.CPU;
 import ahgpoug.com.specshelper.adapters.CpuRecyclerAdapter;
 import ahgpoug.com.specshelper.util.FiltersHelper;
 import ahgpoug.com.specshelper.util.Globals;
@@ -36,6 +36,7 @@ import ahgpoug.com.specshelper.util.Globals;
 public class ActivityCpu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
         FiltersHelper.clearCpuFilter(ActivityCpu.this);
 
         initViews();
-        initEvents();
         initDrawer();
+        initEvents();
     }
 
     @Override
@@ -88,6 +89,14 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityCpu.this, ActivityCart.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initDrawer(){
@@ -102,6 +111,8 @@ public class ActivityCpu extends AppCompatActivity implements NavigationView.OnN
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        header = navigationView.getHeaderView(0).findViewById(R.id.header);
 
         if (Globals.isAdmin){
             Menu nav_menu = navigationView.getMenu();

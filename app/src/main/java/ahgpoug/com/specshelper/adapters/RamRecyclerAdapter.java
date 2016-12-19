@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
-import ahgpoug.com.specshelper.Objects.RAM;
+import ahgpoug.com.specshelper.objects.RAM;
 import ahgpoug.com.specshelper.R;
 
 public class RamRecyclerAdapter extends RecyclerView.Adapter<RamRecyclerAdapter.ViewHolder> {

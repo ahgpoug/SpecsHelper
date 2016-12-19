@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
-import ahgpoug.com.specshelper.Objects.Motherboard;
+import ahgpoug.com.specshelper.objects.Motherboard;
 import ahgpoug.com.specshelper.R;
 
 public class MotherboardRecyclerAdapter extends RecyclerView.Adapter<MotherboardRecyclerAdapter.ViewHolder> {

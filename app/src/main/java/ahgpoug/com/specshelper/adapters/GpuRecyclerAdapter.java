@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 import ahgpoug.com.specshelper.util.DataBaseHelper;
 import ahgpoug.com.specshelper.util.Globals;
-import ahgpoug.com.specshelper.Objects.GPU;
+import ahgpoug.com.specshelper.objects.GPU;
 import ahgpoug.com.specshelper.R;
 
 public class GpuRecyclerAdapter extends RecyclerView.Adapter<GpuRecyclerAdapter.ViewHolder> {

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/manufacturer_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/manufacturerET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Производитель"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/codename_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/codenameET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Название"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cClock_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/cClockET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Частота ГП (МГц)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/mClock_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/mClockET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Частота видеопамяти (МГц)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/memorySize_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/memorySizeET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Объем видеопамяти (Мб)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:id="@+id/memoryType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="350dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/bus_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/busET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Шина (бит)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/process_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/processET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Техпроцесс (нм)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/slots_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/slotsET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Занимаемые слоты (шт.)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_gravity="left"
+                android:layout_marginTop="8dp"
+                android:text="Поддержка SlI/CrossFire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:id="@+id/sli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="350dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/price_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:id="@+id/priceET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:width="350dp"
+                    android:hint="Цена (руб.)"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:text="Подтвердить"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
